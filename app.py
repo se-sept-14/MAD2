@@ -18,7 +18,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(db_path)      # Id
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Configure JWT
-app.config['JWT_SECRET_KEY'] = 'your-secret-key'    # Ideally, this should again be read from an env file and NOT hardcoded here
+app.config['JWT_SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key')    # Ideally, this should again be read from an env file and NOT hardcoded here
 jwt = JWTManager(app)
 
 # Initialize the database

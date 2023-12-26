@@ -7,5 +7,6 @@ services:
     command: sh -c "python app.py"
     environment:
       ENVIRONMENT: "prod"
+      SECRET_KEY: "strong-secret-key"
     ports:
       - "5000:5000"
