@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  flask-app:
+    build: .
+    container_name: MAD2-project
+    command: sh -c "python app.py"
+    environment:
+      ENVIRONMENT: "prod"
+    ports:
+      - "5000:5000"
