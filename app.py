@@ -13,8 +13,8 @@ from database.models import db
 app = Flask(__name__)
 
 # Configure an SQLite database
-db_path = os.path.join(os.path.dirname(__file__), 'database', 'site.db')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(db_path)     # Ideally, this should not be hardcoded and read from an environment file
+db_path = os.path.join(os.path.dirname(__file__), 'database', 'site.db')    # Use absolute path to store SQLite database in some other location
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(db_path)      # Ideally, this should not be hardcoded and read from an environment file
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Configure JWT
