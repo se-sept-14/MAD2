@@ -1,1 +1,4 @@
 .venv/
+__pycache__/
+database/__pycache__/
+endpoints/__pycache__/
