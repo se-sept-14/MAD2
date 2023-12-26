@@ -1,6 +1,6 @@
 # Import libraries
 from flask import Blueprint, jsonify, request
-from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity, JWTError
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
 # Import the database and models
 from database.models import db, User
@@ -22,8 +22,6 @@ def login():
             return jsonify(access_token = access_token)
         else:
             return jsonify({ 'message': 'Invalid credentials' }), 401
-    except JWTError as e:
-        return jsonify({ 'message': 'Failed to create JWT', 'error': str(e) }), 500
     except Exception as e:
         return jsonify({ 'message': 'An unexpected error occurred', 'error': str(e) }), 500
 
@@ -76,8 +74,6 @@ def is_protected():
         current_user = User.query.get(current_user_id)
 
         return jsonify({ 'message': 'You are logged in', 'username': current_user.username })
-    except JWTError as e:
-        return jsonify({ 'message': 'Invalid token', 'error': str(e) }), 401
     except Exception as e:
         return jsonify({ 'message': 'An unexpected error occurred', 'error': str(e) }), 500
 
@@ -92,7 +88,5 @@ def admin():
             return jsonify({ 'message': 'You are an admin' })
         else:
             return jsonify({ 'message': 'You are NOT an admin' }), 403
-    except JWTError as e:
-        return jsonify({ 'message': 'Invalid token', 'error': str(e) }), 401
     except Exception as e:
         return jsonify({ 'message': 'An unexpected error occurred', 'error': str(e) }), 500
