@@ -56,7 +56,7 @@ def register():
         })
 
 @auth_router.route('/protected', methods = ['GET'], endpoint = 'auth-protected')
-@jwt_required
+@jwt_required()
 def is_protected():
     current_user_id = get_jwt_identity()
     current_user = User.query.get(current_user_id)
@@ -64,7 +64,7 @@ def is_protected():
     return jsonify({ 'message': 'You are logged in', 'username': current_user.username })
 
 @auth_router.route('/admin', methods = ['GET'], endpoint = 'auth-admin')
-@jwt_required
+@jwt_required()
 def admin():
     current_user_id = get_jwt_identity()
     current_user = User.query.get(current_user_id)
