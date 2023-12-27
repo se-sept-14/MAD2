@@ -45,3 +45,7 @@ sqlite3 database/site.db
 ```sql
 select * from user;
 ```
+
+## **To deploy the flask backend using docker**
+1. Make sure you have [docker](https://docs.docker.com/engine/install/) installed
+2. `./deploy.sh`
