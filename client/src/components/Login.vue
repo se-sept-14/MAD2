@@ -17,8 +17,14 @@
 </template>
 
 <script>
+import { useAuthStore } from "../stores/AuthStore";
+
 export default {
   name: "Login",
+  setup() {
+    const authStore = useAuthStore();
+    return { authStore };
+  },
   data() {
     return {}
   }

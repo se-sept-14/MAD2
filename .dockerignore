@@ -1,4 +1,5 @@
 .git/
+client/
 __pycache__/
 database/__pycache__/
 database/site.db
