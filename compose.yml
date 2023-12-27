@@ -1,12 +1,24 @@
+# Docker Compose version
 version: '3.8'
 
+# Definition of services
 services:
+  # Service for the Flask application
   flask-app:
+    # Build context for the Dockerfile (in current directory)
     build: .
+
+    # Container name for easy reference
     container_name: MAD2-project
+
+    # Command to run when the container starts (runs the app.py script)
     command: sh -c "python app.py"
+
+    # Environment variables for the Flask application
     environment:
-      ENVIRONMENT: "prod"
-      SECRET_KEY: "strong-secret-key"
+      ENVIRONMENT: "prod"          # Set the environment to "prod"
+      SECRET_KEY: "strong-secret-key"  # Set a secret key for the application
+
+    # Port mapping (host_port:container_port)
     ports:
-      - "5000:5000"
+      - "5000:5000"  # Map port 5000 on the host to port 5000 on the container
