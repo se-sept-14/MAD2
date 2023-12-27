@@ -3,7 +3,7 @@
 This is just a boilerplate code for people to get started with Flask, SQLAlchemy and SQLite3 database (with a user table). Make sure you have the `sqlite3` cli tool installed
 
 ## **Install SQLite3**
-**On Debian or Debian-based distros like Ubuntu, Pop OS, Linux Mint, etc**
+**On Debian or Debian-based distros like Ubuntu, Pop!\_OS, Linux Mint, etc**
 ```sh
 sudo apt install -y sqlite3
 ```
@@ -25,6 +25,12 @@ yay -S sqlite
     - `. .venv/bin/activate`
 4. Install the dependencies `pip install -r requirement.txt`
 5. Run it `python app.py`
+
+## **Run the vue app**
+1. Clone this repo (if haven't already)
+2. `cd MAD2/client`
+3. Install the dependencies `npm install`
+4. `npm run dev`
 
 ## **Open the SQLite db from cli**
 ```sh
