@@ -1,6 +1,10 @@
 .git/
+.venv/
 client/
+database/site.db
 __pycache__/
 database/__pycache__/
-database/site.db
+services/__pycache__/
 endpoints/__pycache__/
+controllers/__pycache__/
+configurations/__pycache__/
