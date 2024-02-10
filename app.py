@@ -34,4 +34,6 @@ with app.app_context():
 if __name__ == '__main__':
     environment = os.environ.get('ENVIRONMENT', 'dev')
     host = '127.0.0.1' if environment == 'dev' else '0.0.0.0'
-    app.run(host = host, debug = True)
+    debug = True if environment == 'dev' else False
+
+    app.run(host = host, debug = debug)
